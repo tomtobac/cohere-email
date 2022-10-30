@@ -1,6 +1,6 @@
 # 🤖 Google Mail - Cohere.ai
 
-> @note: based on @danimelchor work, check it [here](https://github.com/danimelchor/gpt3-email)
+> @note: based on [@danimelchor](https://github.com/danimelchor) work, check it [here](https://github.com/danimelchor/gpt3-email)
 
 ## Getting started
 
@@ -34,7 +34,9 @@ $ npm run build
 
 2. Click on the icon and a menu should appear, please enter your `api key`. You can get it from [here](https://dashboard.cohere.ai/api-keys). You can test it out with trial api key.
 
-3. Navigate to [Google Mail](https://mail.google.com/) and click on "Compose", click again into the body of the email. After writing your command, as the example above, you can click on "Co:here" button and it will generate a text based in your command.
+3. Navigate to [Google Mail](https://mail.google.com/) and click on "Compose", click again into the body of the email. After writing your command, as the example bellow 👇, you can click on "Co:here" button and it will generate a text based in your command.
+
+4. Any error with the api will be printed in the body of the email too
 
 ## 📸 Screenshots
 
@@ -43,3 +45,9 @@ $ npm run build
 | !["Settings Page"](./img/settings.png)              | !["Samples Page"](./img/samples.png)             |
 | !["Mail with Cohere button"](./img/mail_clean.png)  | !["Generate is loading"](./img/mail_loading.png) |
 | !["Mail redacted with AI"](./img/mail_redacted.png) |                                                  |
+
+### 🧪 todos
+
+1. feat: add tooltip with an explanation of every setting
+2. feat: allow more than one stop_sequence
+3. refactor: tests
