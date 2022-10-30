@@ -1,0 +1,21 @@
+.alert {
+  position: absolute;
+  background-color: #ebebf8;
+  padding: 6px 12px;
+  font-weight: bold;
+  margin: 4px 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  animation: fadeIn 0.5s;
+  border-radius: 2px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

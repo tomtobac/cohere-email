@@ -1,0 +1,18 @@
+.separator {
+  height: 10px;
+  background-color: var(--primary-color);
+  border-width: 0;
+  animation: wave 5s infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-color: var(--primary-color);
+  }
+  50% {
+    background-color: var(--secondary-color);
+  }
+  100% {
+    background-color: var(--primary-color);
+  }
+}

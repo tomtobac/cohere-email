@@ -1,0 +1,35 @@
+{
+  "name": "cohere-email",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "author": {
+    "name": "Tomeu Cabot",
+    "email": "cabotvalloritomeu@gmail.com",
+    "url": "https://tomtobac.dev"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write src public",
+    "generate": "scaffdog generate"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.200",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.2.0",
+    "prettier": "^2.7.1",
+    "scaffdog": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0"
+  }
+}

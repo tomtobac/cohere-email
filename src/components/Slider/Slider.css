@@ -1,0 +1,12 @@
+.Slider {
+  display: flex;
+  align-items: center;
+}
+
+.Slider output {
+  width: 4ch;
+}
+
+.Slider input {
+  flex-grow: 1;
+}

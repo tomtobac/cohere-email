@@ -1,0 +1,16 @@
+.button {
+  border-radius: 30px;
+  padding: 6px 12px;
+  color: white;
+  background-color: var(--primary-color);
+  border-width: 2px;
+  border-color: var(--primary-color);
+  border-style: solid;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: var(--secondary-color);
+}

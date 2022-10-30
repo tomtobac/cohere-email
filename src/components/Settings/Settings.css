@@ -1,0 +1,23 @@
+.settings {
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control--has-error input {
+  border: 1px solid var(--error-color);
+}
+
+.form-control--has-error small,
+.form-control--has-error label {
+  color: var(--error-color);
+}

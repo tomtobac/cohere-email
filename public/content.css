@@ -1,0 +1,41 @@
+:root {
+  --primary: #917ef3;
+  --secondary: #ebebf8;
+}
+
+.cohere-email {
+  position: absolute;
+  border-radius: 30px;
+  padding: 6px 12px;
+  color: white;
+  background-color: var(--primary);
+  border-width: 2px;
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.cohere-email:hover {
+  background-color: var(--secondary);
+  color: #333293;
+  border-color: var(--secondary);
+}
+
+.loading {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border-left-color: var(--secondary);
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
