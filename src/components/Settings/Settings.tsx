@@ -91,7 +91,11 @@ export const Settings = () => {
             value={formik.values.temperature}
           />
         </div>
-        <div className="form-control">
+        <div
+          className={cs("form-control", {
+            "form-control--has-error": formik.errors.stop_sequences,
+          })}
+        >
           <label htmlFor="stop_sequences">Stop Sequence</label>
           <input
             id="stop_sequences"
@@ -100,6 +104,9 @@ export const Settings = () => {
             onChange={formik.handleChange}
             value={formik.values.stop_sequences}
           />
+          {formik.errors.stop_sequences && (
+            <small>{formik.errors.stop_sequences}</small>
+          )}
         </div>
         <div className="form-control">
           <label htmlFor="top_k">top-k</label>
