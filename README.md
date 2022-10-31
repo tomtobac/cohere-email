@@ -48,6 +48,7 @@ $ npm run build
 
 ### 🧪 todos
 
+1. build: create a release version so users don't need build step
 1. feat: add tooltip with an explanation of every setting
-2. feat: allow more than one stop_sequence
-3. refactor: tests
+1. feat: allow more than one stop_sequence
+1. refactor: tests
