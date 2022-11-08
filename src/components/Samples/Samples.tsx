@@ -42,7 +42,7 @@ export const Samples: React.FC<Props> = () => {
       {hasSuccess && <Alert text="Samples saved successfully" />}
       <form className="flex flex-col gap-2 py-2" onSubmit={formik.handleSubmit}>
         <div
-          className={cs("flex flex-col", {
+          className={cs("flex flex-col gap-1", {
             "text-red-400": formik.errors.samples,
           })}
         >
