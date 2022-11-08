@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
 import cs from "classnames";
 
-import "./Header.css";
-
 export const Header = () => {
   return (
-    <header>
+    <header className="mb-2 flex align-middle">
       <a href="https://cohere.ai" target="_blank">
         <img
           src="/logo-ukraine.svg"
@@ -14,13 +12,17 @@ export const Header = () => {
           height={32}
         />
       </a>
-      <nav>
-        <ul className="menu">
+      <nav className="ml-auto">
+        <ul className="flex gap-6">
           <li>
             <NavLink
               to="/settings"
               title="Settings"
-              className={({ isActive }) => cs({ "link-is-active": isActive })}
+              className={({ isActive }) =>
+                cs({
+                  "underline decoration-indigo-500 decoration-wavy": isActive,
+                })
+              }
             >
               Settings
             </NavLink>
@@ -29,7 +31,11 @@ export const Header = () => {
             <NavLink
               to="/samples"
               title="Samples"
-              className={({ isActive }) => cs({ "link-is-active": isActive })}
+              className={({ isActive }) =>
+                cs({
+                  "underline decoration-indigo-500 decoration-wavy": isActive,
+                })
+              }
             >
               Samples
             </NavLink>

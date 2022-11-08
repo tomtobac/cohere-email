@@ -9,7 +9,6 @@ import Storage from "@utils/index";
 import { initialValues, SAMPLES_KEY } from "./constants";
 import validation from "./validation";
 import { FormValues } from "./types";
-import "./Samples.css";
 
 export type Props = {};
 
@@ -39,27 +38,30 @@ export const Samples: React.FC<Props> = () => {
     },
   });
   return (
-    <section className="samples">
+    <section className="relative">
       {hasSuccess && <Alert text="Samples saved successfully" />}
-      <form onSubmit={formik.handleSubmit}>
+      <form className="flex flex-col gap-2 py-2" onSubmit={formik.handleSubmit}>
         <div
-          className={cs("form-control", {
-            "form-control--has-error": formik.errors.samples,
+          className={cs("flex flex-col", {
+            "text-red-400": formik.errors.samples,
           })}
         >
           <label htmlFor="samples">Samples:</label>
           <textarea
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1 font-mono text-sm"
             id="samples"
             name="samples"
-            rows={25}
+            rows={20}
             onChange={formik.handleChange}
             value={formik.values.samples}
           />
           {formik.errors.samples && <small>{formik.errors.samples}</small>}
         </div>
-        <section className="actions">
-          <Button type="submit">Save</Button>
-          <Button type="button" onClick={setDefaultSamples}>
+        <section className="flex justify-center gap-2">
+          <Button className="w-full" type="submit">
+            Save
+          </Button>
+          <Button className="w-full" type="button" onClick={setDefaultSamples}>
             Set default
           </Button>
         </section>

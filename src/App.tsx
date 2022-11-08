@@ -1,12 +1,11 @@
 import { Header } from "@components/Header";
 import { Outlet } from "react-router-dom";
-import "./App.css";
 
 function App() {
   return (
     <main>
       <Header />
-      <hr className="separator" />
+      <hr className="h-3 border-0 bg-orange-400" />
       <Outlet />
     </main>
   );

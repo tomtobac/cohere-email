@@ -10,7 +10,6 @@ import { Alert } from "@components/Alert";
 import { initialValues, SETTINGS_KEYS, MODELS } from "./constants";
 import { FormValues } from "./types";
 import validation from "./validation";
-import "./Settings.css";
 
 export const Settings = () => {
   const timeoutRef = useRef<number>();
@@ -36,16 +35,17 @@ export const Settings = () => {
     },
   });
   return (
-    <section className="settings">
+    <section className="relative">
       {hasSuccess && <Alert text="Settings saved successfully" />}
-      <form onSubmit={formik.handleSubmit}>
+      <form className="flex flex-col gap-2 py-2" onSubmit={formik.handleSubmit}>
         <div
-          className={cs("form-control", {
-            "form-control--has-error": formik.errors.api_key,
+          className={cs("flex flex-col gap-1", {
+            "text-red-400": formik.errors.api_key,
           })}
         >
           <label htmlFor="api_key">API key</label>
           <input
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1"
             id="api_key"
             name="api_key"
             type="password"
@@ -54,9 +54,10 @@ export const Settings = () => {
           />
           {formik.errors.api_key && <small>{formik.errors.api_key}</small>}
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="model">Model</label>
           <select
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1"
             id="model"
             name="model"
             onChange={formik.handleChange}
@@ -67,9 +68,10 @@ export const Settings = () => {
             ))}
           </select>
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="tokens">Number of Tokens</label>
           <input
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1"
             id="tokens"
             name="tokens"
             type="number"
@@ -78,7 +80,7 @@ export const Settings = () => {
             value={formik.values.tokens}
           />
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="temperature">Temperature</label>
           <Slider
             id="temperature"
@@ -92,12 +94,13 @@ export const Settings = () => {
           />
         </div>
         <div
-          className={cs("form-control", {
-            "form-control--has-error": formik.errors.stop_sequences,
+          className={cs("flex flex-col gap-1", {
+            "text-red-400": formik.errors.stop_sequences,
           })}
         >
           <label htmlFor="stop_sequences">Stop Sequence</label>
           <input
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1"
             id="stop_sequences"
             name="stop_sequences"
             type="text"
@@ -108,9 +111,10 @@ export const Settings = () => {
             <small>{formik.errors.stop_sequences}</small>
           )}
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="top_k">top-k</label>
           <input
+            className="rounded-sm border border-solid border-slate-300 px-2 py-1"
             id="top_k"
             name="top_k"
             type="number"
@@ -119,7 +123,7 @@ export const Settings = () => {
             value={formik.values.top_k}
           />
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="top_p">top-p</label>
           <Slider
             id="top_p"
@@ -132,7 +136,7 @@ export const Settings = () => {
             value={formik.values.top_p}
           />
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="frequency_penalty">Frequency Penalty</label>
           <Slider
             id="frequency_penalty"
@@ -145,7 +149,7 @@ export const Settings = () => {
             value={formik.values.frequency_penalty}
           />
         </div>
-        <div className="form-control">
+        <div className="flex flex-col gap-1">
           <label htmlFor="presence_penalty">Presence Penalty</label>
           <Slider
             id="presence_penalty"

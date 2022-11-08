@@ -1,7 +1,6 @@
-console.log("Cohere - v0.0.0");
 const co = {
   className: "cohere-email",
-  textContent: "Co:here",
+  btnText: "Co:here",
 };
 
 const uuid = () =>
@@ -16,13 +15,12 @@ const attachBtn = (parentNode) => {
   const exist = parentNode.closest("td").querySelector("." + co.className);
   if (exist) return;
   const button = document.createElement("button");
-  button.classList.add(co.className);
+  button.classList.add(co.className, "bottom-3", "left-0");
   button.id = uuid();
-  button.textContent = co.textContent;
-  button.style.bottom = "12px";
-  button.style.left = "0";
+  button.textContent = co.btnText;
   button.onclick = function () {
-    if (!parentNode.textContent.trim().length) return;
+    const email = this.previousSibling;
+    if (!email.textContent.trim().length) return;
     chrome.runtime.sendMessage({
       content: parentNode.firstChild.textContent,
       id: button.id,
@@ -34,16 +32,18 @@ const attachBtn = (parentNode) => {
 
 const attachResponse = (text, id) => {
   const button = document.getElementById(id);
-  button.innerHTML = co.textContent;
+  button.innerHTML = co.btnText;
 
-  const parentNode = button.previousSibling; //.closest('[contenteditable]');
+  const parentNode = button.previousSibling;
   parentNode.innerHTML += "<div><br /></div>" + text;
 };
 
 document.addEventListener("click", (e) => {
   if (!e.target.isContentEditable) return;
   const content = e.target.closest("[contenteditable]").parentNode;
-  content.style.position = "relative";
+  if (!content.classList.contains("relative")) {
+    content.classList.add("relative");
+  }
   attachBtn(content);
 });
 
